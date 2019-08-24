@@ -17,6 +17,7 @@ Vue.use(Vuetify);
 Vue.use(VueRouter);
 Vue.config.productionTip = false;
 
+
 const routes = [
     {path: '/', component: Home},
     {path: '/profile', component: Profile},
@@ -29,4 +30,5 @@ new Vue({
     render: h => h(App),
     router,
     vuetify: new Vuetify(),
+
 }).$mount('#app');

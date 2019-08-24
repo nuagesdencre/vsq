@@ -1,9 +1,5 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-HOMEPAGE CONTENT
-    </p>
     <router-view></router-view>
   </div>
 </template>
