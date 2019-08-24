@@ -10,6 +10,7 @@ import App from './App.vue'
 import Home from "./components/Home";
 import Profile from './components/Profile.vue';
 import Contact from './components/Contact.vue';
+import Portfolio from './components/Portfolio.vue'
 
 //plugins and utils
 Vue.use(Vuetify);
@@ -20,6 +21,7 @@ const routes = [
     {path: '/', component: Home},
     {path: '/profile', component: Profile},
     {path: '/contact', component: Contact},
+    {path: '/portfolio', component: Portfolio}
 ];
 const router = new VueRouter({routes});
 
