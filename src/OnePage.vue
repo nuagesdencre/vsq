@@ -11,6 +11,21 @@
         <Profile/>
         <Portfolio/>
         <Contact/>
+        <v-card height="150">
+            <v-footer absolute class="font-weight-medium">
+                <v-col class="text-center" cols="12">
+                    {{ new Date().getFullYear() }} — <strong>veronique savard</strong>
+                    <v-btn
+                            v-bind="options"
+                            class="mt-12"> linkedin
+                    </v-btn>
+                    <v-btn
+                            v-bind="options"
+                            class="mt-12"> github
+                    </v-btn>
+                </v-col>
+            </v-footer>
+        </v-card>
     </v-app>
 
 </template>
