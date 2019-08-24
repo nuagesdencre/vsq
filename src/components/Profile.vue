@@ -1,4 +1,4 @@
-<template>
+<template id="profile">
     <v-container grid-list-md fluid>
         <h1>Bio</h1>
         <p>

@@ -1,124 +1,94 @@
 <template>
-  <v-app>
-    <v-card id="lateral">
-      <v-toolbar
-              dark
-              tabs
-              flat
-              color="indigo"
-      >
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
-        <v-toolbar-title>Page title</v-toolbar-title>
-        <div class="flex-grow-1"></div>
-        <v-btn icon>
-          <v-icon>search</v-icon>
-        </v-btn>
-        <v-btn icon>
-          <v-icon>more_vert</v-icon>
-        </v-btn>
-        <template v-slot:extension>
-          <v-tabs
-                  v-model="tabs"
-                  align-with-title
-                  background-color="transparent"
-          >
-            <v-tab href="#one">Item One</v-tab>
-            <v-tab href="#two">Item Two</v-tab>
-            <v-tab href="#three">Item Three</v-tab>
-            <v-tabs-slider color="pink"></v-tabs-slider>
-          </v-tabs>
-        </template>
-      </v-toolbar>
-      <v-card-text>
-        <v-tabs-items v-model="tabs">
-          <v-tab-item
-                  v-for="content in ['one', 'two', 'three']"
-                  :key="content"
-                  :value="content"
-          >
-            <v-card
-                    height="200px"
-                    flat
-            >
-            </v-card>
-          </v-tab-item>
-        </v-tabs-items>
-      </v-card-text>
-      <v-fab-transition>
-        <v-btn
-                :key="activeFab.icon"
-                :color="activeFab.color"
-                fab
-                large
+    <v-app>
+        <v-toolbar
+                tabs
+                flat
+        >
+            <div class="flex-grow-1"></div>
+
+                <v-tabs
+                        v-model="tabs"
+                        background-color="transparent"
+                >
+                    <v-tab href="#home" to="/">Home</v-tab>
+                    <v-tab href="#profile" to="/profile">Profile</v-tab>
+                    <v-tab href="#portfolio" to="/portfolio">Portfolio</v-tab>
+                    <v-tab href="#contact" to="/contact">Contact</v-tab>
+                    <v-tabs-slider color="pink"></v-tabs-slider>
+                </v-tabs>
+                <v-menu bottom left>
+                    <template v-slot:activator="{ on }">
+                        <v-btn
+                                dark
+                                icon
+                                v-on="on"
+                        >
+                            <v-icon>more_vert</v-icon>
+                        </v-btn>
+                    </template>
+
+                    <v-list>
+                        <v-list-item
+                                v-for="(item, i) in items"
+                                :key="i"
+                                @click=""
+                        >
+                            <v-list-item-title>{{ item.title }}</v-list-item-title>
+                        </v-list-item>
+                    </v-list>
+                </v-menu>
+
+        </v-toolbar>
+        <v-parallax
                 dark
-                bottom
-                left
-                class="v-btn--example"
+                src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
         >
-          <v-icon>{{ activeFab.icon }}</v-icon>
-        </v-btn>
-      </v-fab-transition>
-    </v-card>
-      <v-parallax
-              dark
-              src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
-      >
-        <v-row
-                align="center"
-                justify="center"
-        >
-          <h1 class="display-2 font-weight-thin mb-4">Vuetify.js</h1>
-          <h4 class="subheading">Build your application today!</h4>
-        </v-row>
-      </v-parallax>
-    <Home msg="Veronique Savard"/>
-    <v-card height="150">
-      <v-footer
-              absolute
-              class="font-weight-medium"
-      >
-        <v-col
-                class="text-center"
-                cols="12"
-        >
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-        </v-col>
-      </v-footer>
-    </v-card>
-  </v-app>
+            <v-row
+                    align="center"
+                    justify="center"
+            >
+                <h1 class="display-2 font-weight-thin mb-4">Veronique</h1>
+                <h4 class="subheading">INVENTIVERO</h4>
+            </v-row>
+        </v-parallax>
+        <Home msg="Veronique Savard"/>
+        <v-card height="150">
+            <v-footer
+                    absolute
+                    class="font-weight-medium"
+            >
+                <v-col
+                        class="text-center"
+                        cols="12"
+                >
+                    {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+                </v-col>
+            </v-footer>
+        </v-card>
+    </v-app>
+
 </template>
 
 <script>
-import Home from './components/Home.vue'
+    import Home from './components/Home.vue'
 
-export default {
-  name: 'app',  data: () => ({
-        fab: false,
-        hidden: false,
-        tabs: null,
-    }),
-
-    computed: {
-        activeFab () {
-            switch (this.tabs) {
-                case 'one': return { color: 'success', icon: 'share' }
-                case 'two': return { color: 'red', icon: 'edit' }
-                case 'three': return { color: 'green', icon: 'keyboard_arrow_up' }
-                default: return {}
-            }
-        },
-    },
-  components: {
-    Home
-  }
-}
+    export default {
+        name: 'app', data: () => ({
+            hidden: false,
+            tabs: null,
+            items: [
+                { title: 'Click Me' },
+                { title: 'Click Me' },
+                { title: 'Click Me' },
+                { title: 'Click Me 2' },
+            ],
+        }),
+        components: {
+            Home
+        }
+    }
 
 </script>
 
 <style>
-  #lateral .v-btn--example {
-    bottom: 0;
-    position: absolute;
-    margin: 0 0 16px 16px;
-  }
 </style>

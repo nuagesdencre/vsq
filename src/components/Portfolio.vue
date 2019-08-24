@@ -1,4 +1,4 @@
-<template>
+<template id="portfolio">
     <v-card
             class="mx-auto"
             :flat="flat"

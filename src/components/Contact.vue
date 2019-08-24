@@ -1,4 +1,4 @@
-<template>
+<template id ="contact">
     <div class="row">
         <form>
             <div class="row">
