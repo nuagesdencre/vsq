@@ -7,8 +7,9 @@ import VueRouter from 'vue-router';
 import App from './App.vue'
 
 // components
-import Profile from './components/Profile.vue';
 import Home from "./components/Home";
+import Profile from './components/Profile.vue';
+import Contact from './components/Contact.vue';
 
 //plugins and utils
 Vue.use(Vuetify);
@@ -18,10 +19,12 @@ Vue.config.productionTip = false;
 const routes = [
     {path: '/', component: Home},
     {path: '/profile', component: Profile},
+    {path: '/contact', component: Contact},
 ];
 const router = new VueRouter({routes});
 
 new Vue({
     render: h => h(App),
     router,
+    vuetify: new Vuetify(),
 }).$mount('#app');
