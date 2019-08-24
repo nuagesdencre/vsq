@@ -1,70 +1,66 @@
 <template id="contact">
-    <div class="row">
-        <v-form
-                ref="form"
-                v-model="valid"
-                lazy-validation
-        >
-            <v-text-field
-                    v-model="name"
-                    :counter="10"
-                    :rules="nameRules"
-                    label="Name"
-                    required
-            ></v-text-field>
-
-            <v-text-field
-                    v-model="email"
-                    :rules="emailRules"
-                    label="E-mail"
-                    required
-            ></v-text-field>
-
-            <v-select
-                    v-model="select"
-                    :items="items"
-                    :rules="[v => !!v || 'Item is required']"
-                    label="Item"
-                    required
-            ></v-select>
-
-            <v-checkbox
-                    v-model="checkbox"
-                    :rules="[v => !!v || 'You must agree to continue!']"
-                    label="Do you agree?"
-                    required
-            ></v-checkbox>
-
-            <v-btn
-                    :disabled="!valid"
-                    color="success"
-                    class="mr-4"
-                    @click="validate"
+    <div class="container">
+        <div class="row">
+            <v-form
+                    ref="form"
+                    v-model="valid"
+                    lazy-validation
             >
-                Validate
-            </v-btn>
+                <v-text-field
+                        v-model="name"
+                        :counter="10"
+                        :rules="nameRules"
+                        label="Name"
+                        required
+                ></v-text-field>
 
-            <v-btn
-                    color="error"
-                    class="mr-4"
-                    @click="reset"
-            >
-                Reset Form
-            </v-btn>
+                <v-text-field
+                        v-model="email"
+                        :rules="emailRules"
+                        label="E-mail"
+                        required
+                ></v-text-field>
 
-            <v-btn
-                    color="warning"
-                    @click="resetValidation"
-            >
-                Reset Validation
-            </v-btn>
-        </v-form>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequatur ipsum obcaecati officiis
-            quam, quibusdam quis vero. Aliquid aperiam delectus deserunt dignissimos molestiae, nam nobis provident,
-            quae quia saepe ullam.
-        </p>
+                <v-select
+                        v-model="select"
+                        :items="items"
+                        :rules="[v => !!v || 'Item is required']"
+                        label="Item"
+                        required
+                ></v-select>
 
+                <v-checkbox
+                        v-model="checkbox"
+                        :rules="[v => !!v || 'You must agree to continue!']"
+                        label="Do you agree?"
+                        required
+                ></v-checkbox>
 
+                <v-btn
+                        :disabled="!valid"
+                        color="success"
+                        class="mr-4"
+                        @click="validate"
+                >
+                    Validate
+                </v-btn>
+
+                <v-btn
+                        color="error"
+                        class="mr-4"
+                        @click="reset"
+                >
+                    Reset Form
+                </v-btn>
+
+                <v-btn
+                        color="warning"
+                        @click="resetValidation"
+                >
+                    Reset Validation
+                </v-btn>
+            </v-form>
+        </div>
     </div>
 </template>
 <script>
@@ -106,3 +102,8 @@
         },
     }
 </script>
+<style>
+    .container{
+padding-left: 32%;
+    }
+</style>

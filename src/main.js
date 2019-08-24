@@ -4,8 +4,8 @@ import 'vuetify/dist/vuetify.min.css';
 import VueRouter from 'vue-router';
 
 //app
-import App from './App.vue'
-
+// import App from './App.vue'
+import OnePage from './OnePage.vue'
 // components
 import Home from "./components/Home";
 import Profile from './components/Profile.vue';
@@ -27,7 +27,8 @@ const routes = [
 const router = new VueRouter({routes});
 
 new Vue({
-    render: h => h(App),
+    // render: h => h(App),
+    render: h => h(OnePage),
     router,
     vuetify: new Vuetify(),
 
