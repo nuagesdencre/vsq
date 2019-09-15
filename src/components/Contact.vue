@@ -1,5 +1,5 @@
 <template id="contact">
-    <div class="container">
+    <div class="contact__container">
         <div class="row">
             <v-form
                     ref="form"
@@ -103,7 +103,7 @@
     }
 </script>
 <style>
-    .container{
+    .contact__container{
 padding-left: 32%;
     }
 </style>
