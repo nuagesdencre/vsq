@@ -8,9 +8,42 @@
 
             Veronique relishes the challenge of the constant learning slope that comes with the ever-evolving programming languages and stacks. One thing she particularly enjoys is sharing the knowledge with budding tech geniuses, the ninjas of CoderDojo, when she volunteers at the Dogpatch Labs chapter. When she is not in front of her screen, she is likely attending a meetup, drafting projects to promote diversity and inclusion, or reaching new heights (literally) on a bouldering wall.
         </p>
+        <v-row>
+            <v-col cols="12">
+                <v-row
+                        :align="alignment"
+                        :justify="justify"
+                        class="grey lighten-5"
+                        style="height: 300px;"
+                >
+                    <v-card
+                            v-for="n in 3"
+                            :key="n"
+                            class="ma-3 pa-6"
+                            outlined
+                            tile
+                    >
+                        Column
+                    </v-card>
+                </v-row>
+            </v-col>
+        </v-row>
     </v-container>
-</template>
 
+
+
+</template>
+<script>
+    export default{
+        data () {
+            return {
+                alignment: 'center',
+                dense: false,
+                justify: 'space-around',
+            }
+        },
+    }
+</script>
 <style scoped>
     p {
         margin: 0;
